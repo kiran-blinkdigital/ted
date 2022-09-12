@@ -20,24 +20,40 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
     />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="./images/1662119524.ico"
+    />
+
     <link rel="stylesheet" href="./css/style.css" />
-    <title>Ted</title>
+    <title>TED project</title>
   </head>
   <body>
-    <header>
+    <header id="section1">
       <nav id="navbar" class="header-main container">
-        <a href="" class="brand">
+        <a href="#" class="brand">
           <img id="logo-brand" src="./images/banner/ted-logo.png" alt="" />
         </a>
         <ul class="nav-menu">
-          <li class="nav-item"><a class="nav-link" href="">about us</a></li>
-          <li class="nav-item"><a class="nav-link" href="">mission</a></li>
-          <li class="nav-item"><a class="nav-link" href="">roadmap</a></li>
-          <li class="nav-item"><a class="nav-link" href="">team</a></li>
-          <li class="nav-item"><a class="nav-link" href="">faq</a></li>
+          <li class="nav-item">
+            <a data-link="section2" class="nav-link">about us</a>
+          </li>
+          <li class="nav-item">
+            <a data-link="section3" class="nav-link">mission</a>
+          </li>
+          <li class="nav-item">
+            <a data-link="section4" class="nav-link">roadmap</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a data-link="section5" class="nav-link">team</a>
+          </li> -->
+          <li class="nav-item">
+            <a data-link="section6" class="nav-link">faq</a>
+          </li>
 
           <li class="nav-item">
-            <a class="join-now" href="">Join now</a>
+            <a data-link="section" class="join-now">Join now</a>
           </li>
         </ul>
         <div class="hamburger hidden-lg">
@@ -56,7 +72,7 @@
             alt=""
           />
           <div class="banner__herocopy hero-flex-item">
-            <h3 class="hero-copy">ted Nft's collection</h3>
+            <h1 class="hero-copy">ted Nft's collection</h1>
             <p class="hero-para">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis
               accusantium illum repellat provident,
@@ -67,19 +83,20 @@
           </div>
 
           <div class="banner__heroted hero-flex-item">
-            <img class="ted" src="./images/banner/tedmen-main.png" alt="" />
+            <img class="ted" src="./images/banner/Right-Teddy.gif" alt="" />
+            <!-- <img class="ted" src="./images/banner/tedmen-main.png" alt="" /> -->
             <!-- <img class="shadow" src="./images/banner/Layer-656.png" alt="" /> -->
           </div>
           <!-- <div class="banner__icon">
-            <a href=""
-              ><img class="facebook" src="./images/banner/facebook.png" alt=""
-            /></a>
-            <img class="line" src="./images/banner/I.png" alt="" />
-          </div> -->
+              <a href=""
+                ><img class="facebook" src="./images/banner/facebook.png" alt=""
+              /></a>
+              <img class="line" src="./images/banner/I.png" alt="" />
+            </div> -->
         </div>
       </section>
 
-      <section class="about-main">
+      <section id="section2" class="about-main">
         <div class="about">
           <div class="about__planet">
             <div class="about__heading">
@@ -91,13 +108,18 @@
           </div>
           <div class="about__hero container">
             <div class="about__copy">
-              <img class="teddy-1" src="./images/about/ted01.png" alt="" />
+              <img class="teddy-1" src="./images/about/head.gif" alt="" />
+              <!-- <img class="teddy-1" src="./images/about/ted01.png" alt="" /> -->
               <span>
                 <p class="text-1 padd-right">9999 unique</p>
                 <p class="text-2">wild ted nft living on the</p>
                 <p class="text-1 padd-left">blockchain</p>
               </span>
-              <img class="teddy-1" src="./images/about/ted02.png" alt="" />
+              <img
+                class="teddy-1"
+                src="./images/about/tedgif-maker.gif"
+                alt=""
+              />
             </div>
 
             <p class="about__para">
@@ -109,7 +131,8 @@
           </div>
         </div>
       </section>
-      <section class="mission">
+
+      <section id="section3" class="mission">
         <div class="mission__heading">
           <h3>our mission</h3>
         </div>
@@ -130,7 +153,9 @@
             </div>
           </div>
           <div class="mission__ted">
-            <img src="./images/mission/teddymission.png" alt="" />
+            <!-- <img src="./images/mission/teddymission.png" alt="" /> -->
+            <!-- <img src="./images/mission/Platform-Teddy.gif" alt="" /> -->
+            <img src="./images/mission/-gif-maker.gif" alt="" />
           </div>
           <div class="mission__para">
             <p>
@@ -143,7 +168,8 @@
           </div>
         </div>
       </section>
-      <section class="roadmap">
+
+      <section id="section4" class="roadmap">
         <div class="roadmap__heading">
           <h3>roadmap</h3>
         </div>
@@ -193,7 +219,8 @@
           </div>
         </div>
       </section>
-      <section class="team">
+
+      <!-- <section id="section5" class="team">
         <div class="team__heading">
           <h3>team ted</h3>
         </div>
@@ -232,8 +259,9 @@
             <h4 class="name-team">Lorem ipsum</h4>
           </div>
         </div>
-      </section>
-      <section class="faq">
+      </section> -->
+
+      <section id="section6" class="faq">
         <div class="faq__heading">
           <h3>faq</h3>
         </div>
@@ -317,31 +345,29 @@
           </div>
         </div>
         <div class="logo-bottom">
-          <a href="">
+          <a href="#">
             <img src="./images/banner/ted-logo.png" alt="" />
           </a>
         </div>
       </section>
-      <footer>
+
+      <footer id="section7">
         <div class="icon container">
-          <a class="img-icon facebook" href="">
+          <!-- <a class="img-icon facebook" href="">
             <i class="fa-brands fa-facebook-f"></i>
-          </a>
-          <img class="line-icon" src="./images/footer/line-.png" alt="" />
+          </a> -->
+          <!-- <img class="line-icon" src="./images/footer/line-.png" alt="" /> -->
           <a class="img-icon pintrest" href="">
-            <i class="fa-brands fa-pinterest-p"></i>
+            <i class="fa-brands fa-discord"></i>
           </a>
           <img class="line-icon" src="./images/footer/line-.png" alt="" />
           <a class="img-icon twitter" href="">
             <i class="fa-brands fa-twitter"></i>
           </a>
         </div>
-        <div class="arrow-up">
-          <button id="smooth-scroll">
-            <i class="fa-solid fa-angle-up"></i>
-            <!-- <img src="./images/footer/arrow-up.png" alt="" /> -->
-          </button>
-        </div>
+        <button id="myBtn" title="Go to top">
+          <i class="fa-solid fa-angle-up"></i>
+        </button>
       </footer>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

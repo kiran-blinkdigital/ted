@@ -50,7 +50,7 @@ window.addEventListener("scroll", () => {
     ) {
       document.getElementById("logo-brand").style.width = "61px";
     } else {
-      document.getElementById("logo-brand").style.width = "75px";
+      document.getElementById("logo-brand").style.width = "71px";
     }
   }
 });
@@ -79,7 +79,33 @@ document.querySelectorAll(".nav-link").forEach((n) =>
 );
 
 //
-const bottomButton = document.getElementById("smooth-scroll");
+// var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// scroll button active
+const mybutton = document.getElementById("myBtn");
+window.addEventListener("scroll", () => {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+});
+
+//scroll top
+const bottomButton = document.getElementById("myBtn");
 bottomButton.addEventListener("click", () => {
   window.scrollTo({
     top: 0,
@@ -88,4 +114,60 @@ bottomButton.addEventListener("click", () => {
   });
 });
 
-console.log();
+// scroll to section click on nav item menu
+const links = document.querySelectorAll(".nav-link");
+const head = document.getElementById("section1");
+console.log(head.clientHeight);
+links.forEach((item) => {
+  item.addEventListener("click", () => {
+    const el = document.getElementById(item.getAttribute("data-link"));
+    console.log(el);
+    const e = el.offsetTop - head.offsetHeight;
+    console.log(e);
+
+    // el.scrollIntoView({ behavior: "smooth", top: e });
+    window.scrollTo({
+      behavior: "smooth",
+      top: e,
+    });
+  });
+});
+
+//
+// Hide Header on on scroll down
+// var didScroll;
+// var lastScrollTop = 0;
+// var delta = 5;
+// var navbarHeight = $("header").outerHeight();
+
+// $(window).scroll(function (event) {
+//   didScroll = true;
+// });
+
+// setInterval(function () {
+//   if (didScroll) {
+//     hasScrolled();
+//     didScroll = false;
+//   }
+// }, 250);
+
+// function hasScrolled() {
+//   var st = $(this).scrollTop();
+
+//   // Make sure they scroll more than delta
+//   if (Math.abs(lastScrollTop - st) <= delta) return;
+
+//   // If they scrolled down and are past the navbar, add class .nav-up.
+//   // This is necessary so you never see what is "behind" the navbar.
+//   if (st > lastScrollTop && st > navbarHeight) {
+//     // Scroll Down
+//     $("header").removeClass("nav-up").addClass("nav-down");
+//   } else {
+//     // Scroll Up
+//     if (st + $(window).height() < $(document).height()) {
+//       $("header").removeClass("nav-down").addClass("nav-up");
+//     }
+//   }
+
+//   lastScrollTop = st;
+// }

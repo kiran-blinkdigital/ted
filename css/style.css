@@ -351,6 +351,10 @@ small {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @media only screen and (min-width: 1025px) {
   .hidden-lg {
     display: none !important;
@@ -389,7 +393,7 @@ small {
   }
 }
 
-.common-bg, .team, .roadmap, .mission, .about-main, .banner {
+.common-bg, .team, .roadmap, .mission, .about-main {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -410,7 +414,7 @@ main {
 
 header {
   position: fixed;
-  transition: 0.6s;
+  transition: top 0.6s ease-in-out;
   left: 0;
   right: 0;
   padding-top: 20px;
@@ -471,7 +475,7 @@ header .header-main a img {
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   header .header-main a {
-    font-size: 18px;
+    font-size: 24px;
   }
 }
 header .header-main .nav-menu {
@@ -492,8 +496,8 @@ header .header-main .nav-menu {
     min-height: 100vh;
     text-align: center;
     transition: 0.3s;
-    overflow: scroll;
-    background-image: url("../images/banner/dots.png"), url("../images/banner/eeeee.png");
+    overflow: hidden;
+    background-image: url("../images/banner/Star-BG.gif"), url("../images/banner/eeeee.png");
   }
   header .header-main .nav-menu.active {
     left: 0;
@@ -502,11 +506,6 @@ header .header-main .nav-menu {
 @media (max-width: 767px) and (max-width: 767px) {
   header .header-main .nav-menu.active {
     padding-top: 60px;
-  }
-}
-@media only screen and (max-width: 767px) and (min-width: 768px) and (max-width: 1024px) {
-  header .header-main .nav-menu.active {
-    padding-top: 50px;
   }
 }
 @media (max-width: 767px) {
@@ -531,13 +530,19 @@ header .header-main .nav-menu {
     min-height: 100vh;
     text-align: center;
     transition: 0.3s;
-    background-image: url("../images/banner/dots.png"), url("../images/banner/eeeee.png");
+    background-image: url("../images/banner/Star-BG.gif"), url("../images/banner/eeeee.png");
   }
   header .header-main .nav-menu.active {
     left: 0;
+    padding-top: 3rem;
   }
   header .header-main .nav-menu .nav-item {
     margin: 10px 0;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  header .header-main .nav-item {
+    line-height: 2;
   }
 }
 header .header-main .nav-item .nav-link {
@@ -565,6 +570,12 @@ header .header-main .join-now {
   border: 2px solid #ff6d00;
   border-radius: 25px 0 25px 0;
   padding: 15px 40px;
+}
+@media (max-width: 767px) {
+  header .header-main .join-now {
+    border-radius: 20px 0 20px 0;
+    padding: 10px 20px;
+  }
 }
 header .header-main .join-now:hover {
   background-color: #ff6d00;
@@ -623,18 +634,26 @@ header .header-main .hamburger .bar:nth-child(1) {
 }
 
 .banner {
-  padding-top: 100px;
-  background-image: url("../images/banner/dots.png");
-  padding-bottom: 150px;
+  padding-top: 80px;
+  background-image: url("../images/banner/Star-BG.gif"), url("../images/banner/Starline.gif");
+  background-position: center, center;
+  background-size: cover, 100% 64%;
+  background-repeat: no-repeat;
 }
 @media (max-width: 767px) {
   .banner {
-    padding-top: 110px;
-    padding-bottom: 4rem;
+    background-size: cover, 250%;
+    background-position: center, center 87%;
+    padding-top: 7rem;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .banner {
+    background-size: cover, contain;
   }
 }
 .banner__flex {
-  padding-top: 8rem;
+  padding-top: 3rem;
   position: relative;
   z-index: 50;
   display: -webkit-box;
@@ -643,13 +662,12 @@ header .header-main .hamburger .bar:nth-child(1) {
   display: -webkit-flex;
   display: flex;
   align-items: center;
-  gap: 68px;
   flex-flow: row;
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .banner__flex {
-    padding-top: 130px;
-    gap: 30px;
+    padding-top: 0px;
+    gap: 1px;
   }
 }
 @media (max-width: 767px) {
@@ -657,7 +675,7 @@ header .header-main .hamburger .bar:nth-child(1) {
     padding-top: 30px;
     margin-top: 0;
     flex-direction: column;
-    gap: 30px;
+    gap: 0px;
   }
 }
 .banner__flex .hero-flex-item {
@@ -665,26 +683,28 @@ header .header-main .hamburger .bar:nth-child(1) {
 }
 .banner__shadowbox {
   position: absolute;
+  max-width: 700px;
   z-index: -1;
-  right: -13%;
-  top: -18%;
+  right: -8%;
+  top: 4%;
 }
 @media (max-width: 767px) {
   .banner__shadowbox {
     max-width: unset;
     position: absolute;
-    left: -50px;
+    left: 0;
     right: 0;
     margin-left: auto;
     margin-right: auto;
-    width: 500px;
-    top: 30%;
+    width: 360px;
+    top: 40%;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .banner__shadowbox {
-    right: -33%;
-    top: -18%;
+    max-width: 500px;
+    right: -20%;
+    top: 0%;
   }
 }
 .banner__herocopy .cta .join-now {
@@ -710,6 +730,14 @@ header .header-main .hamburger .bar:nth-child(1) {
     padding: 10px 23px;
   }
 }
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .banner__herocopy .cta .join-now {
+    font-size: 18px;
+    border: 2px solid #ff6d00;
+    border-radius: 18px 0 18px 0;
+    padding: 10px 25px;
+  }
+}
 @media (max-width: 767px) {
   .banner__herocopy .cta {
     margin-top: 1.3rem;
@@ -723,7 +751,7 @@ header .header-main .hamburger .bar:nth-child(1) {
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .banner__herocopy .cta {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
   }
 }
 .banner__herocopy .hero-copy {
@@ -731,14 +759,14 @@ header .header-main .hamburger .bar:nth-child(1) {
   font-family: "Stretch Pro";
   font-size: 55px;
   color: #ff6d00;
-  line-height: 1.15;
+  line-height: 1.2;
 }
 @media (max-width: 767px) {
   .banner__herocopy .hero-copy {
     font-size: 30px;
     color: #ff6d00;
     text-align: center;
-    line-height: 1.15;
+    line-height: 1.3;
     margin-bottom: 20px;
   }
 }
@@ -766,12 +794,27 @@ header .header-main .hamburger .bar:nth-child(1) {
     font-size: 18px;
   }
 }
+@media (max-width: 767px) {
+  .banner__heroted {
+    padding-left: 70px;
+  }
+}
+@media (max-width: 767px) {
+  .banner__heroted {
+    padding-left: 50px;
+  }
+}
 .banner__heroted img {
-  width: 450px;
+  max-width: 700px;
 }
 @media (max-width: 767px) {
   .banner__heroted img {
-    width: 300px;
+    max-width: 400px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .banner__heroted img {
+    max-width: 525px;
   }
 }
 .banner__icon {
@@ -817,16 +860,15 @@ header .header-main .hamburger .bar:nth-child(1) {
 }
 
 .about-main {
-  background-image: url("../images/banner/dots.png");
+  background-image: url("../images/banner/Star-BG.gif");
 }
 .about-main .about {
-  padding-top: 6rem;
   padding-bottom: 8rem;
 }
 @media (max-width: 767px) {
   .about-main .about {
-    padding-top: 2rem;
-    padding-bottom: 4rem;
+    padding-top: 0rem;
+    padding-bottom: 5rem;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
@@ -1005,11 +1047,12 @@ header .header-main .hamburger .bar:nth-child(1) {
 }
 
 .mission {
-  background-image: url("../images/banner/dots.png");
+  background-image: url("../images/banner/Star-BG.gif");
+  padding-bottom: 8rem;
 }
 @media (max-width: 767px) {
   .mission {
-    padding-bottom: 0rem;
+    padding-bottom: 5rem;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
@@ -1020,8 +1063,8 @@ header .header-main .hamburger .bar:nth-child(1) {
 .mission__flex {
   position: relative;
   z-index: 2;
-  padding-top: 5rem;
-  padding-bottom: 8rem;
+  padding-top: 1rem;
+  max-width: 62rem;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -1029,7 +1072,6 @@ header .header-main .hamburger .bar:nth-child(1) {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4rem;
   margin: auto;
 }
 .mission__flex .shadow {
@@ -1044,8 +1086,7 @@ header .header-main .hamburger .bar:nth-child(1) {
 }
 @media (max-width: 767px) {
   .mission__flex .shadow {
-    top: 30%;
-    max-width: inherit;
+    max-width: 100%;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
@@ -1057,21 +1098,29 @@ header .header-main .hamburger .bar:nth-child(1) {
   .mission__flex {
     margin-top: 0;
     padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-bottom: 0rem;
     flex-direction: column;
-    gap: 3rem;
+    gap: 1rem;
+    max-width: 320px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .mission__flex {
     margin-top: 0;
-    padding-top: 4rem;
+    padding-top: 1.5rem;
     padding-bottom: 4rem;
-    gap: 2rem;
+    gap: 0.5rem;
   }
 }
 .mission__nft {
   flex: 1;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 @media (max-width: 767px) {
   .mission__nft {
@@ -1117,38 +1166,38 @@ header .header-main .hamburger .bar:nth-child(1) {
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .mission__nft p {
-    font-size: 17px;
+    font-size: 1rem;
   }
 }
 .mission__nft h3 {
   color: #ff6d00;
   font-family: "Stretch Pro";
-  font-size: 60px;
+  font-size: 41px;
 }
 @media (max-width: 767px) {
   .mission__nft h3 {
-    font-size: 28px;
+    font-size: 1.9rem;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .mission__nft h3 {
-    font-size: 40px;
+    font-size: 2rem;
   }
 }
 .mission__ted {
-  flex: 1;
+  flex: 1.4;
 }
 .mission__ted img {
   margin: auto;
 }
 @media (max-width: 767px) {
   .mission__ted img {
-    width: 250px;
+    width: 260px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .mission__ted {
-    flex: 1;
+    flex: 1.3;
   }
 }
 .mission__para {
@@ -1174,7 +1223,7 @@ header .header-main .hamburger .bar:nth-child(1) {
 }
 
 .roadmap {
-  background-image: url("../images/banner/dots.png");
+  background-image: url("../images/banner/Star-BG.gif");
   padding-bottom: 8rem;
 }
 @media (max-width: 767px) {
@@ -1276,12 +1325,12 @@ header .header-main .hamburger .bar:nth-child(1) {
 }
 
 .team {
-  background-image: url("../images/banner/dots.png");
+  background-image: url("../images/banner/Star-BG.gif");
   padding-bottom: 8rem;
 }
 @media (max-width: 767px) {
   .team {
-    padding-bottom: 4rem;
+    padding-bottom: 5rem;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
@@ -1291,6 +1340,7 @@ header .header-main .hamburger .bar:nth-child(1) {
 }
 .team__flex {
   padding-top: 8rem;
+  max-width: 59rem;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -1298,6 +1348,7 @@ header .header-main .hamburger .bar:nth-child(1) {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 5rem;
 }
 @media (max-width: 767px) {
   .team__flex {
@@ -1309,12 +1360,13 @@ header .header-main .hamburger .bar:nth-child(1) {
     justify-content: center;
     row-gap: 2rem;
     column-gap: 3rem;
+    max-width: 320px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .team__flex {
     padding-top: 5rem;
-    gap: 3rem;
+    gap: 4rem;
   }
 }
 .team__flex-item .name-team {
@@ -1328,6 +1380,13 @@ header .header-main .hamburger .bar:nth-child(1) {
   .team__flex-item .name-team {
     text-align: center;
     font-size: 0.9rem;
+    margin-top: 1rem;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .team__flex-item .name-team {
+    text-align: center;
+    font-size: 1.1rem;
     margin-top: 1rem;
   }
 }
@@ -1375,8 +1434,9 @@ header .header-main .hamburger .bar:nth-child(1) {
 }
 .team__flex-item .image .team-img {
   position: absolute;
-  top: 37px;
-  left: 38px;
+  top: 0px;
+  left: 0px;
+  padding: 27px;
 }
 @media (max-width: 767px) {
   .team__flex-item .image .team-img {
@@ -1396,7 +1456,7 @@ header .header-main .hamburger .bar:nth-child(1) {
 .faq {
   min-height: 100vh;
   position: relative;
-  background-image: url("../images/FAQ/faq-bg.png"), url("../images/banner/dots.png");
+  background-image: url("../images/FAQ/faq-bg.png"), url("../images/banner/Star-BG.gif");
   background-position: bottom, center;
   background-size: cover, contain;
   background-repeat: no-repeat;
@@ -1413,9 +1473,6 @@ header .header-main .hamburger .bar:nth-child(1) {
     min-height: fit-content;
   }
 }
-.faq__heading h3 {
-  padding: 20px 172px;
-}
 .faq .accordion {
   padding-top: 5rem;
   margin-bottom: 8rem;
@@ -1428,7 +1485,7 @@ header .header-main .hamburger .bar:nth-child(1) {
   .faq .accordion {
     padding-top: 4rem;
     width: 100%;
-    max-width: 320px;
+    max-width: 90%;
   }
 }
 .faq .accordion .accordion-item {
@@ -1552,7 +1609,7 @@ footer {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  background-image: url("../images/footer/footer-bg.png"), url("../images/banner/dots.png");
+  background-image: url("../images/footer/footer-bg.png"), url("../images/banner/Star-BG.gif");
   background-position: top center, bottom;
   background-size: cover, cover;
   background-repeat: no-repeat;
@@ -1586,10 +1643,10 @@ footer .icon .img-icon {
   }
 }
 footer .icon .img-icon.facebook {
-  color: #ff6d00;
+  color: white;
 }
 footer .icon .img-icon.facebook:hover {
-  color: white;
+  color: #ff6d00;
   transition: all 0.3s ease-in-out;
 }
 footer .icon .img-icon.pintrest {
@@ -1617,21 +1674,22 @@ footer .icon .img-icon.twitter:hover {
   }
 }
 footer .arrow-up {
-  position: absolute;
+  position: fixed;
   bottom: 100px;
   right: 100px;
   z-index: 100;
+  display: none;
 }
 @media (max-width: 767px) {
   footer .arrow-up {
-    position: absolute;
+    position: fixed;
     bottom: 20px;
     right: 30px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   footer .arrow-up {
-    position: absolute;
+    position: fixed;
     bottom: 55px;
     right: 60px;
   }
@@ -1648,8 +1706,9 @@ footer .arrow-up button {
   box-shadow: rgb(17, 23, 62) 0px 0px 40px 6px;
 }
 footer .arrow-up button:hover {
-  color: #cd15ff;
-  background-color: transparent;
+  border: 1px solid #ff6d00;
+  background-color: #ff6d00;
+  transition: 0.4s;
 }
 @media (max-width: 767px) {
   footer .arrow-up button {
@@ -1658,5 +1717,40 @@ footer .arrow-up button:hover {
   }
   footer .arrow-up button img {
     width: 40px;
+  }
+}
+footer #myBtn {
+  display: none;
+  position: fixed;
+  bottom: 9%;
+  right: 90px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+  font-size: 2.5rem;
+  border: 1px solid #cd15ff;
+  background-color: #cd15ff;
+  border-radius: 50%;
+  padding: 5px 15px;
+  box-shadow: rgb(17, 23, 62) 0px 0px 40px 6px;
+}
+@media (max-width: 767px) {
+  footer #myBtn {
+    font-size: 1.5rem;
+    padding: 5px 11px;
+    bottom: 20px;
+    right: 30px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  footer #myBtn {
+    bottom: 5%;
+    right: 60px;
   }
 }
