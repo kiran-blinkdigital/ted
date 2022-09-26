@@ -33,8 +33,6 @@ accordionHeaders.forEach((accordionHeader) => {
 // };
 window.addEventListener("scroll", () => {
   if (window.outerWidth < 768) {
-    console.log(window.outerWidth);
-
     if (
       document.body.scrollTop > 50 ||
       document.documentElement.scrollTop > 20
@@ -117,13 +115,10 @@ bottomButton.addEventListener("click", () => {
 // scroll to section click on nav item menu
 const links = document.querySelectorAll(".nav-link");
 const head = document.getElementById("section1");
-console.log(head.clientHeight);
 links.forEach((item) => {
   item.addEventListener("click", () => {
     const el = document.getElementById(item.getAttribute("data-link"));
-    console.log(el);
     const e = el.offsetTop - head.offsetHeight;
-    console.log(e);
 
     // el.scrollIntoView({ behavior: "smooth", top: e });
     window.scrollTo({

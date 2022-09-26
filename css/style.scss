@@ -799,7 +799,7 @@ header {
     position: absolute;
     max-width: 700px;
     z-index: -1;
-    right: -8%;
+    right: -0%;
     top: 4%;
     @include mq(mobile) {
       max-width: unset;
@@ -814,7 +814,7 @@ header {
     @include mq(tab) {
       max-width: 500px;
 
-      right: -20%;
+      right: 0%;
       top: 0%;
     }
   }
@@ -882,6 +882,7 @@ header {
       font-size: 22px;
       color: #868ca2;
       line-height: 1.2;
+      margin-top: 0.6rem;
 
       @include mq(mobile) {
         line-height: 1.1;
@@ -1110,7 +1111,7 @@ header {
     }
     &__para {
       margin: auto;
-      margin-top: 2rem;
+      margin-top: 1rem;
       max-width: 900px;
       text-align: center;
       font-size: 22px;
@@ -1195,20 +1196,29 @@ header {
     gap: 1rem;
     @include mq(mobile) {
       @include flexbox();
-      flex-direction: column;
+      justify-content: space-between;
+      // flex-direction: column;
+      flex-direction: row;
+      flex-wrap: wrap;
       gap: 1rem;
+      row-gap: 2rem;
     }
     .nft-item {
       @include mq(mobile) {
-        padding-bottom: 10px;
-        gap: 1rem;
-        max-width: 300px;
-        @include flexbox();
+        // padding-bottom: 10px;
+        // gap: 1rem;
+        max-width: 150px;
+        // @include flexbox();
+        text-align: center;
+        flex-basis: 45%;
         &:nth-child(1) {
-          border-bottom: 1px #33237caf solid;
+          // border-bottom: 1px #33237caf solid;
         }
         &:nth-child(2) {
-          border-bottom: 1px #33237caf solid;
+          // border-bottom: 1px #33237caf solid;
+        }
+        &:nth-child(3) {
+          // border-bottom: 1px #33237caf solid;
         }
       }
     }
@@ -1523,7 +1533,7 @@ header {
     color: $orange;
     @include mq(mobile) {
       padding-top: 4rem;
-      width: 100%;
+      width: 320px;
       max-width: 90%;
     }
     .accordion-item {
@@ -1545,7 +1555,7 @@ header {
       }
       .accordion-item-header {
         min-height: 2rem;
-        padding: 1rem 0rem 1rem 0rem;
+        padding: 1rem 3rem 1rem 0rem;
         line-height: 1.25;
         font: 1.4rem $stretch;
         align-items: center;
@@ -1553,7 +1563,7 @@ header {
         position: relative;
 
         @include mq(mobile) {
-          padding: 0.5rem 0rem 0.5rem 0rem;
+          padding: 0.5rem 1rem 0.5rem 0rem;
 
           font-size: 1rem;
         }
@@ -1671,7 +1681,7 @@ footer {
           transition: all 0.3s ease-in-out;
         }
       }
-      &.pintrest {
+      &.discord {
         color: white;
         &:hover {
           color: $orange;
